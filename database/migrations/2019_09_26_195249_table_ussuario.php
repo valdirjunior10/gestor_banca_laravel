@@ -17,7 +17,8 @@ class TableUssuario extends Migration
             $table->bigIncrements('id');
             $table->string('email', 40);
             $table->string('senha', 40);
-            $table->boolean('ativo')->default(true);            
+            $table->boolean('ativo')->default(true);     
+                       
         });
     }
 

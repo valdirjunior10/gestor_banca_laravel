@@ -13,7 +13,16 @@ class TableLancamentos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('lancamento', function(Blueprint $table) {
+            $table->autoIncrements('id');
+            $table->string('confronto', 255);
+            $table->double('odd', 10,2);
+            $table->double('entrada', 10,2);
+            $table->double('resultado', 10,2);
+            $table->integer('mercado');
+            $table->integer('campeonato');
+            $table->timestamps(); 
+        });
     }
 
     /**

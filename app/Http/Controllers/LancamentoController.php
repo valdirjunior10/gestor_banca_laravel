@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Banca;
+use App\Lancamento;
 use Illuminate\Http\Request;
 
-class BancaController extends Controller
+class LancamentoController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -15,12 +14,7 @@ class BancaController extends Controller
      */
     public function index()
     {
-        return Banca::all();
-    }
-
-    public function getId($id)
-    {
-        return Banca::find($id);
+       return Lancamento::getLancamentos();
     }
 
     /**
@@ -41,55 +35,50 @@ class BancaController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->all();
-        $dados['ativo'] = true;
-        $banca = new Banca();
-        $banca->fill($dados);
-        $banca->save();
-
-        return ['status' => 'OK'];
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Banca  $banca
+     * @param  \App\Lancamento  $lancamento
      * @return \Illuminate\Http\Response
      */
-    public function show(Banca $banca)
+    public function show(Lancamento $lancamento)
     {
         //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Lancamento  $lancamento
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Lancamento $lancamento)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Banca  $banca
+     * @param  \App\Lancamento  $lancamento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Lancamento $lancamento)
     {
-        try {
-            $dados = $request->all();
-            $dados['ativo'] = true;
-            $banca = Banca::find($id);
-            $banca->fill($dados);
-            $banca->save();
-            return ['status' => 'OK'];
-        } catch (\Throwable $th) {
-            return ['status' => 'ERROR', 'msg' => $th->getMessage()];
-        }
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Banca  $banca
+     * @param  \App\Lancamento  $lancamento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Banca $banca)
+    public function destroy(Lancamento $lancamento)
     {
         //
     }

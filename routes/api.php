@@ -18,6 +18,9 @@ Route::get('/banca/{id}', 'BancaController@getId');
 Route::put('/banca/{id}', 'BancaController@update');
 Route::post('/banca', 'BancaController@store');
 
+
+Route::get('/lancamentos', 'LancamentoController@index');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
