@@ -21,6 +21,10 @@ Route::post('/banca', 'BancaController@store');
 
 Route::get('/lancamentos', 'LancamentoController@index');
 
+
+Route::get('/campeonatos', 'CampeonatoController@index');
+Route::get('/mercados', 'MercadoController@index');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
